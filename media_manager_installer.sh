@@ -7,6 +7,7 @@
 
 # Init
 sudo apt update && sudo apt upgrade -y
+sudo apt autoremove -y
 
 # Repos
 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
