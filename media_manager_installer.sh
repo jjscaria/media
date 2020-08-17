@@ -30,9 +30,9 @@ sudo apt-get install git-core python python-setuptools tzdata jq filezilla qbitt
 echo "Installing Tautulli"
 sudo git clone https://github.com/Tautulli/Tautulli.git /opt/Tautulli/
 sudo mkdir /opt/TautulliData
+sudo addgroup tautulli && sudo adduser --system --no-create-home tautulli --ingroup tautulli
 sudo chown tautulli:tautulli -R /opt/Tautulli
 sudo chown tautulli:tautulli -R /opt/TautulliData
-sudo addgroup tautulli && sudo adduser --system --no-create-home tautulli --ingroup tautulli
 wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jjscaria/media/master/tautulli.service
 wget -P /etc/opt/ https://raw.githubusercontent.com/jjscaria/media/master/config.ini
 sudo systemctl daemon-reload
