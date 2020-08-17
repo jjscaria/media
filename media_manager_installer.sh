@@ -56,7 +56,7 @@ echo "Installing Radarr"
 sudo apt install mono-devel curl mediainfo -y
 curl -L -O $( curl -s https://api.github.com/repos/Radarr/Radarr/releases | grep linux.tar.gz | grep browser_download_url | head -1 | cut -d \" -f 4 )
 tar -xvzf Radarr.develop.*.linux.tar.gz
-mv Radarr /opt
+sudo mv Radarr /opt
 sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jjscaria/media/master/radarr.service
 sudo systemctl daemon-reload
 sudo systemctl enable tautulli.service
