@@ -26,6 +26,12 @@ sudo apt-get update -y
 echo "Installing applications"
 sudo apt-get install git-core python python-setuptools tzdata jq filezilla qbittorrent teamviewer -y
 #
+# Change version of Python
+# https://linuxconfig.org/how-to-change-from-default-to-alternative-python-version-on-debian-linux#h2-change-python-version-system-wide
+#
+# Install pip
+sudo apt-get install python3-pip -y
+#
 # Tautulli - http://localhost:8181
 echo "Installing Tautulli"
 sudo git clone https://github.com/Tautulli/Tautulli.git /opt/Tautulli/
@@ -35,8 +41,11 @@ sudo chown tautulli:tautulli -R /opt/Tautulli
 sudo chown tautulli:tautulli -R /opt/TautulliData
 sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jjscaria/media/master/tautulli.service
 sudo wget -P /etc/opt/ https://raw.githubusercontent.com/jjscaria/media/master/config.ini
+sudo chown tautulli:tautulli /etc/opt/config.ini
 sudo systemctl daemon-reload
 sudo systemctl enable tautulli.service
+python -m pip install pyopenssl
+
 sudo systemctl start tautulli.service
 #
 # Radarr - http://localhost:7878
