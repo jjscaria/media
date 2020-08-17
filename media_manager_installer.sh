@@ -65,7 +65,7 @@ rm -f *.gz
 #
 # Sonarr - http://localhost:8989
 echo "Installing Sonarr"
-sudo apt install nzbdrone
+sudo apt install nzbdrone -y
 sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jjscaria/media/master/sonarr.service
 sudo systemctl daemon-reload
 sudo systemctl enable tautulli.service
