@@ -33,8 +33,8 @@ sudo mkdir /opt/TautulliData
 sudo addgroup tautulli && sudo adduser --system --no-create-home tautulli --ingroup tautulli
 sudo chown tautulli:tautulli -R /opt/Tautulli
 sudo chown tautulli:tautulli -R /opt/TautulliData
-wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jjscaria/media/master/tautulli.service
-wget -P /etc/opt/ https://raw.githubusercontent.com/jjscaria/media/master/config.ini
+sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jjscaria/media/master/tautulli.service
+sudo wget -P /etc/opt/ https://raw.githubusercontent.com/jjscaria/media/master/config.ini
 sudo systemctl daemon-reload
 sudo systemctl enable tautulli.service
 sudo systemctl start tautulli.service
@@ -45,7 +45,7 @@ sudo apt install mono-devel curl mediainfo
 curl -L -O $( curl -s https://api.github.com/repos/Radarr/Radarr/releases | grep linux.tar.gz | grep browser_download_url | head -1 | cut -d \" -f 4 )
 tar -xvzf Radarr.develop.*.linux.tar.gz
 mv Radarr /opt
-wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jjscaria/media/master/radarr.service
+sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jjscaria/media/master/radarr.service
 sudo systemctl daemon-reload
 sudo systemctl enable tautulli.service
 sudo systemctl start tautulli.service
@@ -54,7 +54,7 @@ rm -f *.gz
 # Sonarr - http://localhost:8989
 echo "Installing Sonarr"
 sudo apt install nzbdrone
-wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jjscaria/media/master/sonarr.service
+sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jjscaria/media/master/sonarr.service
 sudo systemctl daemon-reload
 sudo systemctl enable tautulli.service
 sudo systemctl start tautulli.service
