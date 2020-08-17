@@ -6,7 +6,7 @@
 # Download PIA from https://www.privateinternetaccess.com/helpdesk/guides/linux/install-2/linux-systemd-installing-the-pia-app
 #
 # Removing Libre Office
-sudo apt-get remove --purge libreoffice*
+sudo apt-get remove --purge libreoffice* -y
 sudo apt clean
 #
 # Updates
