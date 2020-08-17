@@ -5,7 +5,11 @@
 #
 # Download PIA from https://www.privateinternetaccess.com/helpdesk/guides/linux/install-2/linux-systemd-installing-the-pia-app
 #
-# Init
+# Removing Libre Office
+sudo apt-get remove --purge libreoffice*
+sudo apt clean
+#
+# Updates
 echo "Downloading system updates"
 sudo apt update && sudo apt upgrade -y
 sudo apt autoremove -y
@@ -45,12 +49,11 @@ sudo chown tautulli:tautulli /etc/opt/config.ini
 sudo systemctl daemon-reload
 sudo systemctl enable tautulli.service
 python -m pip install pyopenssl
-
 sudo systemctl start tautulli.service
 #
 # Radarr - http://localhost:7878
 echo "Installing Radarr"
-sudo apt install mono-devel curl mediainfo
+sudo apt install mono-devel curl mediainfo -y
 curl -L -O $( curl -s https://api.github.com/repos/Radarr/Radarr/releases | grep linux.tar.gz | grep browser_download_url | head -1 | cut -d \" -f 4 )
 tar -xvzf Radarr.develop.*.linux.tar.gz
 mv Radarr /opt
