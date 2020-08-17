@@ -59,8 +59,8 @@ tar -xvzf Radarr.develop.*.linux.tar.gz
 sudo mv Radarr /opt
 sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jjscaria/media/master/radarr.service
 sudo systemctl daemon-reload
-sudo systemctl enable tautulli.service
-sudo systemctl start tautulli.service
+sudo systemctl enable radarr.service
+sudo systemctl start radarr.service
 rm -f *.gz
 #
 # Sonarr - http://localhost:8989
@@ -68,8 +68,8 @@ echo "Installing Sonarr"
 sudo apt install nzbdrone -y
 sudo wget -P /etc/systemd/system/ https://raw.githubusercontent.com/jjscaria/media/master/sonarr.service
 sudo systemctl daemon-reload
-sudo systemctl enable tautulli.service
-sudo systemctl start tautulli.service
+sudo systemctl enable sonarr.service
+sudo systemctl start sonarr.service
 #
 # Jackett - http://localhost:9117
 echo "Installing Jackett"
